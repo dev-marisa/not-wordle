@@ -8,31 +8,26 @@ const Keyboard = props => {
       <p className="keys">
         {"QWERTYUIOP".split("").map((l, i) => 
           <Key letter={l} key={i} 
-            matched={props.matched} present={props.present}
-            missing={props.missing} click={props.click}  />
+            click={props.click} played={props.played} />
         )}
       </p>
       <p className="keys">
         {"ASDFGHJKL".split("").map((l, i) => 
           <Key letter={l} key={i} 
-            matched={props.matched} present={props.present}
-            missing={props.missing} click={props.click} />
+            click={props.click} played={props.played} />
           )}
       </p>
       <p className="keys">
           <Key letter={"ENTER"} matched={props.matched} 
-            present={props.present} missing={props.missing} 
-            click={props.click} click={props.guess} />
+            click={props.guess} played={props.played} />
           
           {"ZXCVBNM".split("").map((l, i) => 
             <Key letter={l} key={i}
-            matched={props.matched} present={props.present}
-            missing={props.missing} click={props.click} />
+            click={props.click} played={props.played} />
           )}
 
           <Key letter={"⇐"} matched={props.matched} 
-            present={props.present} missing={props.missing} 
-            click={props.click}click={props.backspace} />
+            click={props.backspace} played={props.played} />
         </p>
     </div>
   )

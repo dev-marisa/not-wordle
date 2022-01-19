@@ -6,16 +6,22 @@
 }
 
 .game {
-    width: 320px;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.column {
+    width: 360px;
     margin: 0 auto;
     text-align: center;
-    margin-top: 100px;
 }
 
 h1 {
     font-size: 2.5rem;
     font-weight: 400;
-    margin: 20px;
+    border-bottom: 1px solid grey;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
 form {
@@ -64,8 +70,8 @@ input[type="submit"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:grey;
-    color: #fff;
+    color: grey;
+    border: 1px solid grey;
     border-radius: 5px;
     margin-right: 5px;
     margin-top: 5px;
@@ -73,13 +79,22 @@ input[type="submit"] {
 
 .key {
     height: 50px;
-    width: 30px;
-    font-size: 1.5rem;
+    width: 33px;
+    font-size: 1.1rem;
     background-color: #fff;
     color: grey;
-    border: 1px solid grey;
     cursor: pointer;
     margin-right: 3px;
+}
+
+.letter:last-child, .key:last-child {
+    margin-right: 0;
+}
+
+.letter.match, .letter.partial, .letter.missing {
+    transform: rotateX(0deg);
+    animation-name: flip;
+    animation-duration: 500ms;
 }
 
 .match {
@@ -95,9 +110,20 @@ input[type="submit"] {
 .missing {
     background-color: grey;
     color: #fff;
+    
+}
+
+@keyframes flip {
+    0% { 
+        transform: rotateX(180deg); 
+        color: transparent;
+    }
+    100% { 
+        transform: rotateX(0deg); 
+        color: #fff;
+    }  
 }
 
 .wide {
     width: 70px;
-    font-size: 1.25rem;
 }

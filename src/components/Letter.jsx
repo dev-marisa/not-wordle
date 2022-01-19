@@ -4,10 +4,14 @@ const Letter = props => {
 
   let className = "letter";
   
-  if(props.answer[props.index] === props.letter) {
+  if(props.unplayed) {
+    className += ""
+  } else if(props.answer[props.index] === props.letter) {
     className += " match";
   } else if(props.answer.indexOf(props.letter) >= 0) {
     className += " partial";
+  } else {
+    className += " missing";
   }
 
   return (
