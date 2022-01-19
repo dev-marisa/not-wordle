@@ -1,5 +1,6 @@
 {
   "name": "not-wordle",
+  "homepage": "https://dev-marisa.github.io/not-wordle/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
